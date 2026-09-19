@@ -1,0 +1,419 @@
+
+:root {
+  --site-background: #000000;
+  --site-text: #ffffff;
+  --site-cyan: #12dbdb;
+  --site-cyan-dark: #0fbebe;
+  --site-surface: #111111;
+  --site-surface-light: #181818;
+  --site-border: #2a2a2a;
+  --site-muted: #b8b8b8;
+}
+
+
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--site-background);
+  color: var(--site-text);
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.6;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--site-text);
+  font-weight: 700;
+}
+
+p {
+  color: var(--site-muted);
+  margin-bottom: 1rem;
+}
+
+a {
+  color: var(--site-cyan);
+  transition: color 0.2s ease;
+}
+
+a:hover {
+  color: var(--site-text);
+}
+
+
+.navbar {
+  background-color: var(--site-background) !important;
+  border-bottom: 1px solid var(--site-border);
+  padding: 1rem 0;
+  min-height: 80px;
+}
+
+.navbar .container {
+  max-width: 1210px;
+}
+
+.navbar-brand {
+  color: var(--site-text) !important;
+  font-size: 1.6rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  transition: color 0.2s ease;
+}
+
+.navbar-brand:hover {
+  color: var(--site-cyan) !important;
+}
+
+.navbar-nav {
+  gap: 0.75rem;
+}
+
+.navbar .nav-link {
+  color: var(--site-text) !important;
+  font-size: 1rem;
+  font-weight: 600;
+  padding: 0.6rem 1rem !important;
+  border-radius: 6px;
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease;
+}
+
+.navbar .nav-link:hover,
+.navbar .nav-link:focus,
+.navbar .nav-link.active {
+  background-color: var(--site-cyan);
+  color: var(--site-background) !important;
+}
+
+.navbar-toggler {
+  border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.navbar-toggler:hover {
+  border-color: var(--site-cyan);
+}
+
+.navbar-toggler:focus {
+  box-shadow: 0 0 0 0.2rem rgba(18, 219, 219, 0.25);
+}
+
+.navbar-toggler-icon {
+  filter: brightness(0) invert(1);
+}
+
+
+header {
+  background-color: var(--site-background);
+  color: var(--site-text);
+}
+
+header.bg-primary {
+  background-color: var(--site-background) !important;
+}
+
+header .container {
+  max-width: 1210px;
+}
+
+header h1 {
+  color: var(--site-text);
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  line-height: 1.1;
+  font-weight: 700;
+}
+
+header .lead {
+  color: var(--site-muted);
+  font-size: 1.15rem;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+.btn {
+  border-radius: 8px;
+  font-weight: 700;
+  padding: 0.75rem 1.4rem;
+  transition:
+    background-color 0.2s ease,
+    border-color 0.2s ease,
+    color 0.2s ease,
+    transform 0.2s ease;
+}
+
+
+.btn-primary {
+  background-color: var(--site-background);
+  border-color: var(--site-cyan);
+  color: var(--site-text);
+}
+
+.btn-primary:hover,
+.btn-primary:focus {
+  background-color: var(--site-cyan);
+  border-color: var(--site-cyan);
+  color: var(--site-background);
+  transform: translateY(-2px);
+}
+
+
+.btn-outline-primary {
+  background-color: transparent;
+  border-color: var(--site-cyan);
+  color: var(--site-text);
+}
+
+.btn-outline-primary:hover,
+.btn-outline-primary:focus {
+  background-color: var(--site-cyan);
+  border-color: var(--site-cyan);
+  color: var(--site-background);
+}
+
+
+
+.btn-outline-secondary {
+  background-color: transparent;
+  border: 2px solid var(--site-text);
+  color: var(--site-text);
+}
+
+.btn-outline-secondary:hover,
+.btn-outline-secondary:focus {
+  background-color: var(--site-cyan);
+  border-color: var(--site-cyan);
+  color: var(--site-background);
+}
+
+
+
+.btn-light {
+  background-color: var(--site-text);
+  border-color: var(--site-text);
+  color: var(--site-background);
+}
+
+.btn-light:hover,
+.btn-light:focus {
+  background-color: var(--site-cyan);
+  border-color: var(--site-cyan);
+  color: var(--site-background);
+}
+
+
+.card {
+  background-color: var(--site-surface);
+  border: 1px solid var(--site-border);
+  border-radius: 14px;
+  color: var(--site-text);
+  overflow: hidden;
+
+  transition:
+    transform 0.25s ease,
+    border-color 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  border-color: var(--site-cyan);
+  box-shadow: 0 12px 30px rgba(18, 219, 219, 0.08);
+}
+
+.card-body {
+  padding: 2rem;
+}
+
+.card-title {
+  color: var(--site-text);
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.card-text {
+  color: var(--site-muted);
+}
+
+
+
+main {
+  background-color: var(--site-background);
+}
+
+main .container {
+  max-width: 1210px;
+}
+
+
+.bg-light {
+  background-color: var(--site-surface) !important;
+  border: 1px solid var(--site-border);
+}
+
+.bg-light h2 {
+  color: var(--site-text);
+}
+
+.bg-light p {
+  color: var(--site-muted);
+}
+
+
+
+footer {
+  background-color: var(--site-background) !important;
+  border-top: 1px solid var(--site-border);
+  padding-top: 2.5rem !important;
+  padding-bottom: 2.5rem !important;
+}
+
+footer .container {
+  max-width: 1210px;
+}
+
+footer p {
+  color: var(--site-muted);
+}
+
+footer .text-white {
+  color: var(--site-text) !important;
+}
+
+footer .text-white-50 {
+  color: rgba(255, 255, 255, 0.65) !important;
+}
+
+
+.text-primary {
+  color: var(--site-cyan) !important;
+}
+
+.text-muted {
+  color: var(--site-muted) !important;
+}
+
+
+.border {
+  border-color: var(--site-border) !important;
+}
+
+
+
+a:focus-visible,
+button:focus-visible {
+  outline: 3px solid var(--site-cyan);
+  outline-offset: 3px;
+}
+
+
+
+
+@media (max-width: 991.98px) {
+
+  .navbar {
+    min-height: auto;
+    padding: 1rem 0;
+  }
+
+  .navbar-nav {
+    gap: 0;
+    padding-top: 1rem;
+  }
+
+  .navbar .nav-link {
+    padding: 0.7rem 0.5rem !important;
+  }
+
+  header {
+    padding-top: 4rem !important;
+    padding-bottom: 4rem !important;
+  }
+
+  header h1 {
+    font-size: 3rem;
+  }
+
+}
+
+
+
+@media (max-width: 767.98px) {
+
+  header {
+    text-align: center;
+  }
+
+  header h1 {
+    font-size: 2.5rem;
+  }
+
+  header .lead {
+    font-size: 1.05rem;
+  }
+
+  header .btn {
+    margin-bottom: 0.5rem;
+  }
+
+  .card-body {
+    padding: 1.5rem;
+  }
+
+}
+
+
+
+
+@media (max-width: 575.98px) {
+
+  .navbar-brand {
+    font-size: 1.35rem;
+  }
+
+  header {
+    padding-top: 3rem !important;
+    padding-bottom: 3rem !important;
+  }
+
+  header h1 {
+    font-size: 2.15rem;
+  }
+
+  header .lead {
+    font-size: 1rem;
+  }
+
+  header .btn {
+    width: 100%;
+  }
+
+  .card-body {
+    padding: 1.25rem;
+  }
+
+}
+
+
+
+@media (prefers-reduced-motion: reduce) {
+
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    transition: none !important;
+  }
+
+}
