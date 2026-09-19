@@ -1,27 +1,36 @@
 
 :root {
-  --site-background: #000000;
-  --site-text: #ffffff;
-  --site-cyan: #12dbdb;
-  --site-cyan-dark: #0fbebe;
-  --site-surface: #111111;
-  --site-surface-light: #181818;
-  --site-border: #2a2a2a;
-  --site-muted: #b8b8b8;
+  --black: #000000;
+  --white: #ffffff;
+
+  --cyan: #12dbdb;
+  --cyan-dark: #0fbaba;
+
+  --surface: #111111;
+  --surface-light: #181818;
+
+  --border: #2a2a2a;
+  --muted: #b8b8b8;
 }
 
 
+/* =========================================
+   GLOBAL STYLES
+   ========================================= */
 
 html {
   scroll-behavior: smooth;
 }
 
 body {
-  background-color: var(--site-background);
-  color: var(--site-text);
+  background-color: var(--black);
+  color: var(--white);
   font-family: Arial, Helvetica, sans-serif;
   line-height: 1.6;
 }
+
+
+/* Bootstrap's default headings are overridden */
 
 h1,
 h2,
@@ -29,120 +38,222 @@ h3,
 h4,
 h5,
 h6 {
-  color: var(--site-text);
+  color: var(--white);
   font-weight: 700;
 }
 
 p {
-  color: var(--site-muted);
-  margin-bottom: 1rem;
+  color: var(--muted);
 }
 
 a {
-  color: var(--site-cyan);
-  transition: color 0.2s ease;
-}
-
-a:hover {
-  color: var(--site-text);
+  transition:
+    color 0.2s ease,
+    background-color 0.2s ease;
 }
 
 
-.navbar {
-  background-color: var(--site-background) !important;
-  border-bottom: 1px solid var(--site-border);
-  padding: 1rem 0;
+/* =========================================
+   BOOTSTRAP CONTAINER
+   ========================================= */
+
+.container {
+  max-width: 1200px;
+}
+
+
+/* =========================================
+   NAVBAR
+   Matches:
+   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+   ========================================= */
+
+.navbar.bg-dark {
+  background-color: var(--black) !important;
+  border-bottom: 1px solid var(--border);
   min-height: 80px;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
 }
 
-.navbar .container {
-  max-width: 1210px;
-}
+
+/* Navbar brand */
 
 .navbar-brand {
-  color: var(--site-text) !important;
+  color: var(--white) !important;
   font-size: 1.6rem;
   font-weight: 700;
   letter-spacing: 0.04em;
   transition: color 0.2s ease;
 }
 
-.navbar-brand:hover {
-  color: var(--site-cyan) !important;
+.navbar-brand:hover,
+.navbar-brand:focus {
+  color: var(--cyan) !important;
 }
 
+
+/* Navbar links */
+
 .navbar-nav {
-  gap: 0.75rem;
+  gap: 0.5rem;
 }
 
 .navbar .nav-link {
-  color: var(--site-text) !important;
+  color: var(--white) !important;
   font-size: 1rem;
   font-weight: 600;
+
   padding: 0.6rem 1rem !important;
+
   border-radius: 6px;
+
   transition:
     background-color 0.2s ease,
     color 0.2s ease;
 }
 
+
+/* Navbar hover */
+
 .navbar .nav-link:hover,
-.navbar .nav-link:focus,
-.navbar .nav-link.active {
-  background-color: var(--site-cyan);
-  color: var(--site-background) !important;
+.navbar .nav-link:focus {
+  background-color: var(--cyan);
+  color: var(--black) !important;
 }
 
+
+/* Active Home link */
+
+.navbar .nav-link.active {
+  background-color: var(--cyan);
+  color: var(--black) !important;
+}
+
+
+/* =========================================
+   MOBILE NAVBAR TOGGLER
+   ========================================= */
+
 .navbar-toggler {
-  border: 1px solid rgba(255, 255, 255, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.55);
+  padding: 0.45rem 0.65rem;
 }
 
 .navbar-toggler:hover {
-  border-color: var(--site-cyan);
+  border-color: var(--cyan);
 }
 
 .navbar-toggler:focus {
-  box-shadow: 0 0 0 0.2rem rgba(18, 219, 219, 0.25);
+  border-color: var(--cyan);
+
+  box-shadow:
+    0 0 0 0.2rem rgba(18, 219, 219, 0.2);
 }
+
+
+/* Make hamburger icon white */
 
 .navbar-toggler-icon {
   filter: brightness(0) invert(1);
 }
 
 
-header {
-  background-color: var(--site-background);
-  color: var(--site-text);
-}
+/* =========================================
+   HERO SECTION
+   Matches:
+   <header class="bg-primary text-white text-center py-5">
+   ========================================= */
 
 header.bg-primary {
-  background-color: var(--site-background) !important;
+  background-color: var(--black) !important;
+  color: var(--white) !important;
+
+  border-bottom: 1px solid var(--border);
 }
 
-header .container {
-  max-width: 1210px;
-}
+
+/* Hero heading */
 
 header h1 {
-  color: var(--site-text);
+  color: var(--white);
   font-size: clamp(2.5rem, 5vw, 4rem);
-  line-height: 1.1;
   font-weight: 700;
+  line-height: 1.1;
+
+  margin-bottom: 1rem;
 }
 
+
+/* Hero paragraph */
+
 header .lead {
-  color: var(--site-muted);
+  color: var(--muted) !important;
   font-size: 1.15rem;
+
   max-width: 700px;
+
   margin-left: auto;
   margin-right: auto;
 }
 
 
+/* =========================================
+   HERO BUTTONS
+   ========================================= */
+
+
+/* Bootstrap btn-light */
+
+header .btn-light {
+  background-color: var(--white);
+  border-color: var(--white);
+  color: var(--black);
+
+  font-weight: 700;
+}
+
+header .btn-light:hover,
+header .btn-light:focus {
+  background-color: var(--cyan);
+  border-color: var(--cyan);
+  color: var(--black);
+
+  transform: translateY(-2px);
+}
+
+
+/* Bootstrap btn-outline-light */
+
+header .btn-outline-light {
+  background-color: transparent;
+  border-color: var(--white);
+  color: var(--white);
+
+  font-weight: 700;
+}
+
+header .btn-outline-light:hover,
+header .btn-outline-light:focus {
+  background-color: var(--cyan);
+  border-color: var(--cyan);
+  color: var(--black);
+
+  transform: translateY(-2px);
+}
+
+
+/* =========================================
+   ALL BUTTONS
+   ========================================= */
+
 .btn {
   border-radius: 8px;
+
   font-weight: 700;
-  padding: 0.75rem 1.4rem;
+
+  padding: 0.75rem 1.35rem;
+
   transition:
     background-color 0.2s ease,
     border-color 0.2s ease,
@@ -151,70 +262,119 @@ header .lead {
 }
 
 
+/* =========================================
+   PRIMARY BUTTON
+   Column One:
+   class="btn btn-primary"
+   ========================================= */
+
 .btn-primary {
-  background-color: var(--site-background);
-  border-color: var(--site-cyan);
-  color: var(--site-text);
+  background-color: var(--black);
+  border-color: var(--cyan);
+  color: var(--white);
 }
 
 .btn-primary:hover,
 .btn-primary:focus {
-  background-color: var(--site-cyan);
-  border-color: var(--site-cyan);
-  color: var(--site-background);
+  background-color: var(--cyan);
+  border-color: var(--cyan);
+  color: var(--black);
+
   transform: translateY(-2px);
 }
 
 
-.btn-outline-primary {
-  background-color: transparent;
-  border-color: var(--site-cyan);
-  color: var(--site-text);
+/* =========================================
+   SUCCESS BUTTON
+   Column Two:
+   class="btn btn-success"
+   ========================================= */
+
+.btn-success {
+  background-color: var(--black);
+  border-color: var(--cyan);
+  color: var(--white);
 }
 
-.btn-outline-primary:hover,
-.btn-outline-primary:focus {
-  background-color: var(--site-cyan);
-  border-color: var(--site-cyan);
-  color: var(--site-background);
-}
+.btn-success:hover,
+.btn-success:focus {
+  background-color: var(--cyan);
+  border-color: var(--cyan);
+  color: var(--black);
 
-
-
-.btn-outline-secondary {
-  background-color: transparent;
-  border: 2px solid var(--site-text);
-  color: var(--site-text);
-}
-
-.btn-outline-secondary:hover,
-.btn-outline-secondary:focus {
-  background-color: var(--site-cyan);
-  border-color: var(--site-cyan);
-  color: var(--site-background);
+  transform: translateY(-2px);
 }
 
 
+/* =========================================
+   DANGER BUTTON
+   Column Three:
+   class="btn btn-danger"
+   ========================================= */
 
-.btn-light {
-  background-color: var(--site-text);
-  border-color: var(--site-text);
-  color: var(--site-background);
+.btn-danger {
+  background-color: var(--black);
+  border-color: var(--cyan);
+  color: var(--white);
 }
 
-.btn-light:hover,
-.btn-light:focus {
-  background-color: var(--site-cyan);
-  border-color: var(--site-cyan);
-  color: var(--site-background);
+.btn-danger:hover,
+.btn-danger:focus {
+  background-color: var(--cyan);
+  border-color: var(--cyan);
+  color: var(--black);
+
+  transform: translateY(-2px);
 }
 
+
+/* =========================================
+   WARNING BUTTON
+   Interactive Section:
+   class="btn btn-warning"
+   ========================================= */
+
+.btn-warning {
+  background-color: var(--black);
+  border-color: var(--cyan);
+  color: var(--white);
+}
+
+.btn-warning:hover,
+.btn-warning:focus {
+  background-color: var(--cyan);
+  border-color: var(--cyan);
+  color: var(--black);
+
+  transform: translateY(-2px);
+}
+
+
+/* =========================================
+   MAIN CONTENT
+   ========================================= */
+
+main#features {
+  background-color: var(--black);
+  color: var(--white);
+
+  max-width: 1200px;
+}
+
+
+/* =========================================
+   CARDS
+   ========================================= */
 
 .card {
-  background-color: var(--site-surface);
-  border: 1px solid var(--site-border);
+  background-color: var(--surface);
+
+  border: 1px solid var(--border);
+
   border-radius: 14px;
-  color: var(--site-text);
+
+  color: var(--white);
+
   overflow: hidden;
 
   transition:
@@ -223,119 +383,180 @@ header .lead {
     box-shadow 0.25s ease;
 }
 
+
+/* Card hover */
+
 .card:hover {
   transform: translateY(-5px);
-  border-color: var(--site-cyan);
-  box-shadow: 0 12px 30px rgba(18, 219, 219, 0.08);
+
+  border-color: var(--cyan);
+
+  box-shadow:
+    0 12px 30px rgba(18, 219, 219, 0.1) !important;
 }
+
+
+/* Card content */
 
 .card-body {
   padding: 2rem;
 }
 
+
+/* Card heading */
+
 .card-title {
-  color: var(--site-text);
+  color: var(--white);
+
   font-size: 1.5rem;
   font-weight: 700;
+
+  margin-bottom: 1rem;
 }
+
+
+/* Card paragraph */
 
 .card-text {
-  color: var(--site-muted);
+  color: var(--muted) !important;
 }
 
 
-
-main {
-  background-color: var(--site-background);
-}
-
-main .container {
-  max-width: 1210px;
-}
-
+/* =========================================
+   INTERACTIVE SECTION
+   Matches:
+   <div class="p-4 bg-light rounded text-center">
+   ========================================= */
 
 .bg-light {
-  background-color: var(--site-surface) !important;
-  border: 1px solid var(--site-border);
+  background-color: var(--surface) !important;
+
+  border: 1px solid var(--border);
+
+  color: var(--white) !important;
 }
+
+
+/* Interactive heading */
 
 .bg-light h2 {
-  color: var(--site-text);
+  color: var(--white);
 }
+
+
+/* Interactive paragraph */
 
 .bg-light p {
-  color: var(--site-muted);
+  color: var(--muted) !important;
 }
 
 
+/* Interactive button */
 
-footer {
-  background-color: var(--site-background) !important;
-  border-top: 1px solid var(--site-border);
-  padding-top: 2.5rem !important;
-  padding-bottom: 2.5rem !important;
+.bg-light .btn-warning {
+  background-color: var(--black);
+  border-color: var(--cyan);
+  color: var(--white);
 }
 
-footer .container {
-  max-width: 1210px;
+.bg-light .btn-warning:hover,
+.bg-light .btn-warning:focus {
+  background-color: var(--cyan);
+  border-color: var(--cyan);
+  color: var(--black);
 }
+
+
+/* =========================================
+   CHANGE COLOR JAVASCRIPT SUPPORT
+   =========================================
+
+   Your JavaScript does:
+
+   header.classList.toggle("bg-primary");
+   header.classList.toggle("bg-success");
+
+   Both Bootstrap classes are deliberately
+   styled to stay within the black/cyan theme.
+*/
+
+
+header.bg-success {
+  background-color: var(--surface) !important;
+  color: var(--white) !important;
+
+  border-bottom-color: var(--cyan);
+}
+
+
+/* Keep the hero heading readable */
+
+header.bg-success h1 {
+  color: var(--white);
+}
+
+
+/* Keep hero paragraph readable */
+
+header.bg-success .lead {
+  color: var(--muted) !important;
+}
+
+
+/* =========================================
+   FOOTER
+   Matches:
+   <footer class="bg-dark text-white text-center py-3">
+   ========================================= */
+
+footer.bg-dark {
+  background-color: var(--black) !important;
+
+  border-top: 1px solid var(--border);
+
+  color: var(--white) !important;
+
+  padding-top: 2rem !important;
+  padding-bottom: 2rem !important;
+}
+
+
+/* Footer paragraph */
 
 footer p {
-  color: var(--site-muted);
-}
-
-footer .text-white {
-  color: var(--site-text) !important;
-}
-
-footer .text-white-50 {
-  color: rgba(255, 255, 255, 0.65) !important;
+  color: var(--muted) !important;
 }
 
 
-.text-primary {
-  color: var(--site-cyan) !important;
-}
-
-.text-muted {
-  color: var(--site-muted) !important;
-}
-
-
-.border {
-  border-color: var(--site-border) !important;
-}
-
-
+/* =========================================
+   FOCUS ACCESSIBILITY
+   ========================================= */
 
 a:focus-visible,
 button:focus-visible {
-  outline: 3px solid var(--site-cyan);
+  outline: 3px solid var(--cyan);
   outline-offset: 3px;
 }
 
 
-
+/* =========================================
+   MEDIUM SCREENS
+   ========================================= */
 
 @media (max-width: 991.98px) {
 
-  .navbar {
+  .navbar.bg-dark {
     min-height: auto;
-    padding: 1rem 0;
   }
 
   .navbar-nav {
     gap: 0;
+
     padding-top: 1rem;
   }
 
   .navbar .nav-link {
     padding: 0.7rem 0.5rem !important;
-  }
-
-  header {
-    padding-top: 4rem !important;
-    padding-bottom: 4rem !important;
   }
 
   header h1 {
@@ -345,12 +566,11 @@ button:focus-visible {
 }
 
 
+/* =========================================
+   SMALL SCREENS
+   ========================================= */
 
 @media (max-width: 767.98px) {
-
-  header {
-    text-align: center;
-  }
 
   header h1 {
     font-size: 2.5rem;
@@ -371,17 +591,14 @@ button:focus-visible {
 }
 
 
-
+/* =========================================
+   EXTRA SMALL SCREENS
+   ========================================= */
 
 @media (max-width: 575.98px) {
 
   .navbar-brand {
     font-size: 1.35rem;
-  }
-
-  header {
-    padding-top: 3rem !important;
-    padding-bottom: 3rem !important;
   }
 
   header h1 {
@@ -394,6 +611,7 @@ button:focus-visible {
 
   header .btn {
     width: 100%;
+    margin-right: 0 !important;
   }
 
   .card-body {
@@ -403,6 +621,9 @@ button:focus-visible {
 }
 
 
+/* =========================================
+   REDUCED MOTION
+   ========================================= */
 
 @media (prefers-reduced-motion: reduce) {
 
@@ -414,6 +635,7 @@ button:focus-visible {
   *::before,
   *::after {
     transition: none !important;
+    animation: none !important;
   }
 
 }
