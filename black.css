@@ -13,10 +13,6 @@
 }
 
 
-/* =========================================
-   GLOBAL STYLES
-   ========================================= */
-
 html {
   scroll-behavior: smooth;
 }
@@ -28,8 +24,6 @@ body {
   line-height: 1.6;
 }
 
-
-/* Bootstrap's default headings are overridden */
 
 h1,
 h2,
@@ -52,20 +46,10 @@ a {
 }
 
 
-/* =========================================
-   BOOTSTRAP CONTAINER
-   ========================================= */
-
 .container {
   max-width: 1200px;
 }
 
-
-/* =========================================
-   NAVBAR
-   Matches:
-   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-   ========================================= */
 
 .navbar.bg-dark {
   background-color: var(--black) !important;
@@ -75,8 +59,6 @@ a {
   padding-bottom: 1rem;
 }
 
-
-/* Navbar brand */
 
 .navbar-brand {
   color: var(--white) !important;
@@ -92,7 +74,6 @@ a {
 }
 
 
-/* Navbar links */
 
 .navbar-nav {
   gap: 0.5rem;
@@ -113,8 +94,6 @@ a {
 }
 
 
-/* Navbar hover */
-
 .navbar .nav-link:hover,
 .navbar .nav-link:focus {
   background-color: var(--cyan);
@@ -122,17 +101,12 @@ a {
 }
 
 
-/* Active Home link */
-
 .navbar .nav-link.active {
   background-color: var(--cyan);
   color: var(--black) !important;
 }
 
 
-/* =========================================
-   MOBILE NAVBAR TOGGLER
-   ========================================= */
 
 .navbar-toggler {
   border: 1px solid rgba(255, 255, 255, 0.55);
@@ -147,22 +121,14 @@ a {
   border-color: var(--cyan);
 
   box-shadow:
-    0 0 0 0.2rem rgba(18, 219, 219, 0.2);
+ 0 0.2rem rgba(18, 219, 219, 0.2);
 }
 
-
-/* Make hamburger icon white */
 
 .navbar-toggler-icon {
   filter: brightness(0) invert(1);
 }
 
-
-/* =========================================
-   HERO SECTION
-   Matches:
-   <header class="bg-primary text-white text-center py-5">
-   ========================================= */
 
 header.bg-primary {
   background-color: var(--black) !important;
@@ -172,7 +138,6 @@ header.bg-primary {
 }
 
 
-/* Hero heading */
 
 header h1 {
   color: var(--white);
@@ -183,8 +148,6 @@ header h1 {
   margin-bottom: 1rem;
 }
 
-
-/* Hero paragraph */
 
 header .lead {
   color: var(--muted) !important;
@@ -197,12 +160,6 @@ header .lead {
 }
 
 
-/* =========================================
-   HERO BUTTONS
-   ========================================= */
-
-
-/* Bootstrap btn-light */
 
 header .btn-light {
   background-color: var(--white);
@@ -222,7 +179,6 @@ header .btn-light:focus {
 }
 
 
-/* Bootstrap btn-outline-light */
 
 header .btn-outline-light {
   background-color: transparent;
@@ -241,11 +197,6 @@ header .btn-outline-light:focus {
   transform: translateY(-2px);
 }
 
-
-/* =========================================
-   ALL BUTTONS
-   ========================================= */
-
 .btn {
   border-radius: 8px;
 
@@ -259,13 +210,6 @@ header .btn-outline-light:focus {
     color 0.2s ease,
     transform 0.2s ease;
 }
-
-
-/* =========================================
-   PRIMARY BUTTON
-   Column One:
-   class="btn btn-primary"
-   ========================================= */
 
 .btn-primary {
   background-color: var(--black);
@@ -283,11 +227,6 @@ header .btn-outline-light:focus {
 }
 
 
-/* =========================================
-   SUCCESS BUTTON
-   Column Two:
-   class="btn btn-success"
-   ========================================= */
 
 .btn-success {
   background-color: var(--black);
@@ -305,12 +244,6 @@ header .btn-outline-light:focus {
 }
 
 
-/* =========================================
-   DANGER BUTTON
-   Column Three:
-   class="btn btn-danger"
-   ========================================= */
-
 .btn-danger {
   background-color: var(--black);
   border-color: var(--cyan);
@@ -326,12 +259,6 @@ header .btn-outline-light:focus {
   transform: translateY(-2px);
 }
 
-
-/* =========================================
-   WARNING BUTTON
-   Interactive Section:
-   class="btn btn-warning"
-   ========================================= */
 
 .btn-warning {
   background-color: var(--black);
@@ -349,9 +276,7 @@ header .btn-outline-light:focus {
 }
 
 
-/* =========================================
-   MAIN CONTENT
-   ========================================= */
+
 
 main#features {
   background-color: var(--black);
@@ -361,9 +286,6 @@ main#features {
 }
 
 
-/* =========================================
-   CARDS
-   ========================================= */
 
 .card {
   background-color: var(--surface);
@@ -383,8 +305,6 @@ main#features {
 }
 
 
-/* Card hover */
-
 .card:hover {
   transform: translateY(-5px);
 
@@ -395,14 +315,11 @@ main#features {
 }
 
 
-/* Card content */
 
 .card-body {
   padding: 2rem;
 }
 
-
-/* Card heading */
 
 .card-title {
   color: var(--white);
@@ -414,18 +331,12 @@ main#features {
 }
 
 
-/* Card paragraph */
 
 .card-text {
   color: var(--muted) !important;
 }
 
 
-/* =========================================
-   INTERACTIVE SECTION
-   Matches:
-   <div class="p-4 bg-light rounded text-center">
-   ========================================= */
 
 .bg-light {
   background-color: var(--surface) !important;
@@ -436,21 +347,17 @@ main#features {
 }
 
 
-/* Interactive heading */
 
 .bg-light h2 {
   color: var(--white);
 }
 
 
-/* Interactive paragraph */
-
 .bg-light p {
   color: var(--muted) !important;
 }
 
 
-/* Interactive button */
 
 .bg-light .btn-warning {
   background-color: var(--black);
@@ -466,19 +373,6 @@ main#features {
 }
 
 
-/* =========================================
-   CHANGE COLOR JAVASCRIPT SUPPORT
-   =========================================
-
-   Your JavaScript does:
-
-   header.classList.toggle("bg-primary");
-   header.classList.toggle("bg-success");
-
-   Both Bootstrap classes are deliberately
-   styled to stay within the black/cyan theme.
-*/
-
 
 header.bg-success {
   background-color: var(--surface) !important;
@@ -488,25 +382,16 @@ header.bg-success {
 }
 
 
-/* Keep the hero heading readable */
-
 header.bg-success h1 {
   color: var(--white);
 }
 
 
-/* Keep hero paragraph readable */
 
 header.bg-success .lead {
   color: var(--muted) !important;
 }
 
-
-/* =========================================
-   FOOTER
-   Matches:
-   <footer class="bg-dark text-white text-center py-3">
-   ========================================= */
 
 footer.bg-dark {
   background-color: var(--black) !important;
@@ -520,16 +405,12 @@ footer.bg-dark {
 }
 
 
-/* Footer paragraph */
 
 footer p {
   color: var(--muted) !important;
 }
 
 
-/* =========================================
-   FOCUS ACCESSIBILITY
-   ========================================= */
 
 a:focus-visible,
 button:focus-visible {
@@ -538,9 +419,7 @@ button:focus-visible {
 }
 
 
-/* =========================================
-   MEDIUM SCREENS
-   ========================================= */
+
 
 @media (max-width: 991.98px) {
 
@@ -565,9 +444,7 @@ button:focus-visible {
 }
 
 
-/* =========================================
-   SMALL SCREENS
-   ========================================= */
+
 
 @media (max-width: 767.98px) {
 
@@ -590,9 +467,6 @@ button:focus-visible {
 }
 
 
-/* =========================================
-   EXTRA SMALL SCREENS
-   ========================================= */
 
 @media (max-width: 575.98px) {
 
@@ -620,9 +494,7 @@ button:focus-visible {
 }
 
 
-/* =========================================
-   REDUCED MOTION
-   ========================================= */
+
 
 @media (prefers-reduced-motion: reduce) {
 
